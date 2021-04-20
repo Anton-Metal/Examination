@@ -1,0 +1,22 @@
+{
+  "name": "Examination",
+  "version": "1.0.0",
+  "description": "Examination assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "backend",
+    "frontend",
+    "express",
+    "server",
+    "firestore"
+  ],
+  "author": "Anton Melin",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
