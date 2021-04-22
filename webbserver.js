@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const path = require('path')
-const hamsterwars = require('./routing/hamsterwars.js')
+const hamsterwars = require('./routing/hamsterwars')
 
 
 const PORT = 5566
