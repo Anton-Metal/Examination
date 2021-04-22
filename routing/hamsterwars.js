@@ -60,7 +60,7 @@ router.get('/:id', async (req, res) => {
 	router.post('/', async (req, res) => {
 		const object = req.body
 
-		if( !object || !object.name ) {
+		if( !hamstersObject ) {
 			res.sendStatus(400)
 			return
 		}
@@ -68,6 +68,33 @@ router.get('/:id', async (req, res) => {
 		res.send(docRef.id)
 	})
 
+	// PUT/ hamsterwars
+	router.put('/:id', async (req, res) => {
+
+		const object = req.body
+		const id = req.params.id
+
+		if( !object || !id ) {
+			res.sendStatus(400)
+			return
+		}
+
+		//kontrolerar om doc matchar id i databasen
+		const docRef = db.collection('hamsterwars').doc(id)
+		await docRef.set(object, { merge: true })
+
+		res.sendStatus(200)
+	})
+
+	// en funktion för att kolla om datan är giltiga objekt, även för att spara kod/ alltså inte repetera kod
+	function hamstersObject(maybeAnObject) {
+		if(!maybeAnObject || maybeAnObject.name )
+		
+			return false
+
+		return true
+ 
+	} 
 
 
 
