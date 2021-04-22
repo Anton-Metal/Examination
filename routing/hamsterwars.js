@@ -96,6 +96,22 @@ router.get('/:id', async (req, res) => {
  
 	} 
 
+	// DELETE / hamsterwars/:id
+	// för att tala om vilket dokument som ska tas bort ('/:id')
+	router.delete('/:id', async(req, res) => {
+		// plocka ut id  params.id för att vara exakt plockar ut id 
+		const id = req.params.id
+
+		// kontrolera om id är giltig 
+		if( !id ) {
+			res.sendStatus(400)
+			return
+		}
+		// 								id för att välja ut dokumentet 
+		await db.collection('hamsterwars').doc(id).delete()
+		res.sendStatus(200)
+	})
+
 
 
 
