@@ -3,8 +3,7 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const path = require('path')
-const hamsterwars = require('./routing/hamsterwars')
-
+const hamsters = require('./routing/hamsters')
 
 const PORT = 5566
 
@@ -39,7 +38,7 @@ app.get('/', (req, res) => {
 
 
 //rest api hamsterwars
-app.use('/hamsterwars', hamsterwars)
+app.use('/hamsters', hamsters)
 
 
 // starta webserven

@@ -10,7 +10,7 @@ fetchButton.addEventListener('click', async event => {
 		// och vi lägger in datan på webbsidan 
 
 	//fetch är en asyncron function
-	const response = await fetch('/hamsterwars')
+	const response = await fetch('/hamsters')
 	// gör aom till json
 	const json = await response.json()
 
