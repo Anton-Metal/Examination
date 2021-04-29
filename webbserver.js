@@ -5,7 +5,7 @@ const cors = require('cors')
 const path = require('path')
 const hamsters = require('./routing/hamsters')
 
-const PORT = 5566
+const PORT = process.env.PORT || 5566
 
 const staticFolder = path.join(__dirname, 'static')
 
